@@ -5,14 +5,15 @@ public class Menegeer extends Employee{
         public static final int MANAGEMENT_PAYMENT =5000;
         public double bonus;
 
-        public Menegeer(int no, String name, int year, String department,double bonus) {
+        public Menegeer(int no, String name, int year, String department, String departmentManaged,double bonus) {
             super(no, name, year, department);
             this.bonus = bonus;
+            this.departmentManaged =departmentManaged;
         }
 
     @Override
     public void work() {
-        System.out.println(name + " işə başlayıb: " + year + " ilde " + department + " " + departmentManaged + "Aldigi maas: " + calculateSalary() + " AZN" + " bonus: " + this.bonus + " toplam maas: " + (calculateSalary() + this.bonus));
+        System.out.println(name + " işə başlayıb: " + " " +  year + " ilde " + department + " " + departmentManaged + "Aldigi maas: " + calculateSalary() + " AZN" + " bonus: " + this.bonus + " toplam maas: " + (calculateSalary() + this.bonus));
     }
 
     @Override
