@@ -8,7 +8,6 @@ public class Mainn {
         Tur.CITY_TOUR.displayInfo();
         Tur.BEACH_HOLIDAY.displayInfo();
     }
-
 }
 
 
