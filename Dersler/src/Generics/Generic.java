@@ -12,12 +12,6 @@ public class Generic <T> {
     public T getKey() {
         return key;
     }
-    @Override
-    public String toString() {
-        return "Generic{" +
-                "key=" + key +
-                '}';
-    }
     public static void main(String[] args) {
         Generic<String>t=new Generic<>("Java");
         Generic<Integer>s=new Generic<>(100);
