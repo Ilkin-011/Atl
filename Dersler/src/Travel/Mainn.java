@@ -11,12 +11,4 @@ public class Mainn {
 
 }
 
-//        Tour[] toor = new Tour[2];
-//       toor[0]=tour;
-//       toor[1]=tour;
-//        for (Tour e : toor) {
-//            if (e.isReserved()) {
-//                e.displayInfo();
-//            }
-
 
