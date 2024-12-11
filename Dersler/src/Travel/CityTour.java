@@ -2,7 +2,7 @@ package Travel;
 
 public class CityTour extends Tour{
     public boolean MOUNTAIN_ADVENTURE;
-    public CityTour(int tourId, double price, Enumm tour) {
+    public CityTour(int tourId, double price, Tur tour) {
         super(tourId, price, tour);
         this.MOUNTAIN_ADVENTURE = true;
     }

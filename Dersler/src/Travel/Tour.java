@@ -1,18 +1,19 @@
 package Travel;
 
-public abstract class Tour {
+public class Tour {
     private int tourId;
     private String tourName;
     private double price;
     private boolean isReserved;
-    private Enumm tourtype;
+    private Tur tourtype;
 
-    public Tour(int tourId, double price, Enumm tourtype) {
+    public Tour(int tourId, double price, Tur tourtype) {
         this.tourId = tourId;
         this.price = price;
         this.isReserved = true;
         this.tourtype = tourtype;
     }
+
     public int getTourId() {
         return tourId;
     }
@@ -45,11 +46,11 @@ public abstract class Tour {
         isReserved = reserved;
     }
 
-    public Enumm getTourtype() {
+    public Tur getTourtype() {
         return tourtype;
     }
 
-    public void setTourtype(Enumm tourtype) {
+    public void setTourtype(Tur tourtype) {
         this.tourtype = tourtype;
     }
 
@@ -60,7 +61,9 @@ public abstract class Tour {
                 '}';
     }
 
-    public abstract void displayInfo();
+    public void displayInfo() {
+
+    }
 
     public void TourTYpe() {
         System.out.println(" ");

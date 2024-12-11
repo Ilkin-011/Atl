@@ -2,7 +2,7 @@ package Travel;
 
 public class BeachHoliday extends Tour{
     public boolean Pool;
-    public BeachHoliday(int tourId, double price, Enumm tour) {
+    public BeachHoliday(int tourId, double price, Tur tour) {
         super(tourId, price, tour);
         this.Pool=true;
     }
