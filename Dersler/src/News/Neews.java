@@ -49,7 +49,7 @@ public class Neews<T, A extends Category, N extends Author> {
 
     public static void main(String[] args) {
         ArrayList<Neews> arr = new ArrayList<>();
-        Neews xeber1 = new Neews<>("real 3-2 qoydu", new Category("Idman"),
+        Neews xeber1 = new Neews<>("real 3-2 qalib geldi", new Category("Idman"),
                 new Author<>("Ilkin","Mirzeyev"), LocalDate.of(2024, 12, 12));
         Neews xeber2 = new Neews<>("real 3-3 oldu", new Category("Idman"),
                 new Author<>("Ilkin", "Mirzeyev"), LocalDate.of(2023, 10, 02));
