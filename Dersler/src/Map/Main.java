@@ -1,7 +1,5 @@
 package Map;
 
-import TregisterBIrthdate.Student;
-
 public class Main {
     public static void main(String[] args) {
         StudentRegistry studentRegistry =new StudentRegistry();
