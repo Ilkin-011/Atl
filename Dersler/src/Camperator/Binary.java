@@ -27,6 +27,5 @@ public class Binary {
         if (!found) {
             System.out.println("element tapilmadi !!");
         }
-        System.out.println("dovr sayi :" + count);
     }
 }
