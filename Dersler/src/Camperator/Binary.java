@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Binary {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 89, 4, 45, 9, 8, 66, 6, 5, 5446, 0, 46};
+        int[] arr = {1, 2, 3, 89, 4, 45,  8, 66, 6, 5, 5446, 0, 46};
         int search = 3;
         int first = 0;
         int last = arr.length - 1;
