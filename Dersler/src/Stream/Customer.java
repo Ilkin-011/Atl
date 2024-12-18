@@ -4,8 +4,7 @@ import java.util.Objects;
 
 public class Customer {
     private String name;
-    private Integer
-            debt;
+    private Integer debt;
 
     public String getName() {
         return name;
