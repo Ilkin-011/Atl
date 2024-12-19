@@ -9,16 +9,12 @@ public class GenericTask {
         List<Integer> x = Arrays.asList(21, 3, 12, 24, 4, 34, 35, 546, 5, 67);
         List<String> x1 = Arrays.asList("Salam", "Aysel", "Gulu", "Aynur");
         List<Double> x2 = Arrays.asList(2.5, 0.5, 3.2, 0.4);
-        Predicate<Integer> intPredicate = e -> e % 2 == 0;
-        Predicate<String> strPredicate = e -> e.startsWith("A");
-        Predicate<Double> doublePredicate = e -> e > 2.0;
         System.out.println("Yalnız cüt ədədlər çapa verilsin :");
-        one(x, intPredicate);
+        one(x,  e -> e % 2 == 0);
         System.out.println("Siyahıdan ancaq ilk hərfi `A` olanları çapa verin :");
-        one(x1, strPredicate);
+        one(x1, e -> e.startsWith("A"));
         System.out.println("2-dən böyük olanlar :");
-        one(x2, doublePredicate);
-
+        one(x2,  e -> e > 2.0);
     }
 
     public static <T> void one(List<T> list, Predicate<T> predicate) {
