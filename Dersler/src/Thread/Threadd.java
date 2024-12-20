@@ -1,14 +1,11 @@
 package Thread;
 
 public class Threadd {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < 10; i++) {
             System.out.print(i + " ");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            Thread.sleep(1000);
             }
         }
     }
-}
+

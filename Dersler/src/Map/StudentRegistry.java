@@ -17,7 +17,7 @@ public class StudentRegistry {
 //    }
 //    public void printStudent() {
 //        System.out.println("telebelerin siyahisi");
-//        for(Map.Entry<Integer,MapTask> entry : registry.entrySet()){
+//        for(Ders20.Map.Entry<Integer,MapTask> entry : registry.entrySet()){
 //            System.out.println("Telebenin adi " + entry.getValue() + "telebenin id - si " + entry.getKey());
 //        }
 //    }
