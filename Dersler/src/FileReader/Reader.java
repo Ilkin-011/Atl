@@ -11,6 +11,7 @@ public class Reader {
         FileWriter writer = new FileWriter(fileName);
         int data = 1;
         writer.write("Ilkin");
+        writer.write(32);
         writer.write("Mirzəyev");
         writer.close();
         FileReader reader = new FileReader(fileName);
