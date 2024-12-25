@@ -12,12 +12,10 @@ public class Filter {
         Customer customer2 = new Customer("Asif", 500);
         var myList = Arrays.asList(customer, customer1, customer2);
         System.out.println(myList);
-        var x = myList.stream()
-                .filter(n -> n.getDebt() > 300)
-                .map(n -> {
-                    n.setDebt((int) (n.getDebt() * 1.5));
-                    return n;
-                }).toList();
+        var x = myList.stream().filter(n -> n.getDebt() > 300).map(n -> {
+            n.setDebt((int) (n.getDebt() * 1.5));
+            return n;
+        }).toList();
         System.out.println(x);
     }
 }

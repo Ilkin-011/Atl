@@ -1,6 +1,5 @@
 package FileReader;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +8,7 @@ public class Reader {
     public static void main(String[] args) throws IOException {
         String fileName = "salam.txt";
         FileWriter writer = new FileWriter(fileName);
-        int data = 1;
+        int data;
         writer.write("Ilkin");
         writer.write(32);
         writer.write("Mirzəyev");
@@ -20,4 +19,4 @@ public class Reader {
         }
         reader.close();
     }
-    }
+}
