@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Reader {
     public static void main(String[] args) throws IOException {
-        String fileName = "salam.txt";
+        String fileName = "sa.txt";
         FileWriter writer = new FileWriter(fileName);
         int data;
         writer.write("Ilkin");

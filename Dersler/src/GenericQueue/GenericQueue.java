@@ -36,7 +36,7 @@ public class GenericQueue<T> {
         GenericQueue <String>a1=new GenericQueue();
         GenericQueue <Integer>a2=new GenericQueue();
         List<?> al = Arrays.asList(a1,a2);
-        a1.enqueue("salam");
+        a1.enqueue("sa");
         a2.enqueue(2);
         al.forEach(System.out::println);
 //        a1.dequeue();
