@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>846</IntrospectionStateNumber>
+      <IntrospectionStateNumber>914</IntrospectionStateNumber>
       <ServerVersion>17.2</ServerVersion>
-      <StartupTime>1736027823</StartupTime>
+      <StartupTime>1736150520</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1398,7 +1398,7 @@ false posixrules
 13219||10|C|G
 13219||-9223372036854775808|U|G
 13219||10|U|G</Grants>
-      <IntrospectionStateNumber>846</IntrospectionStateNumber>
+      <IntrospectionStateNumber>914</IntrospectionStateNumber>
       <ObjectId>24613</ObjectId>
       <OwnerName>admin</OwnerName>
     </database>
@@ -6537,13 +6537,29 @@ false posixrules
     <schema id="266" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>846</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-01-04.23:01:31</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>914</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-01-06.10:18:31</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="267" parent="266" name="student_id_seq">
+    <sequence id="267" parent="266" name="country_country_id_seq">
+      <ObjectId>24697</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>913</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <OwnerName>admin</OwnerName>
+    </sequence>
+    <sequence id="268" parent="266" name="job_id_seq">
+      <ObjectId>24640</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>884</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <OwnerName>admin</OwnerName>
+    </sequence>
+    <sequence id="269" parent="266" name="student_id_seq">
       <ObjectId>24619</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
@@ -6551,25 +6567,129 @@ false posixrules
       <StoredType>integer|0s</StoredType>
       <OwnerName>admin</OwnerName>
     </sequence>
-    <table id="268" parent="266" name="student">
+    <table id="270" parent="266" name="country">
+      <ObjectId>24698</ObjectId>
+      <StateNumber>913</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>admin</OwnerName>
+    </table>
+    <table id="271" parent="266" name="job">
+      <ObjectId>24641</ObjectId>
+      <StateNumber>884</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>admin</OwnerName>
+    </table>
+    <table id="272" parent="266" name="student">
       <ObjectId>24614</ObjectId>
       <StateNumber>845</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>admin</OwnerName>
     </table>
-    <column id="269" parent="268" name="fname">
+    <check id="273" parent="270" name="country_country_name_check">
+      <ColNames>country_name</ColNames>
+      <ObjectId>24702</ObjectId>
+      <Predicate>(country_name)::text &lt;&gt; ALL ((ARRAY[&apos;Italy&apos;::character varying, &apos;India&apos;::character varying, &apos;China&apos;::character varying])::text[])</Predicate>
+      <StateNumber>913</StateNumber>
+    </check>
+    <column id="274" parent="270" name="country_id">
+      <DefaultExpression>nextval(&apos;country_country_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>913</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <SequenceId>24697</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="275" parent="270" name="country_name">
+      <Position>2</Position>
+      <StateNumber>913</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="276" parent="270" name="region_id">
+      <Position>3</Position>
+      <StateNumber>913</StateNumber>
+      <StoredType>varchar(2)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="277" parent="270" name="country_pkey">
+      <ColNames>country_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24703</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>913</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="278" parent="270" name="country_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24704</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>913</StateNumber>
+      <UnderlyingIndexId>24703</UnderlyingIndexId>
+    </key>
+    <check id="279" parent="271" name="job_max_salary_check">
+      <ColNames>max_salary</ColNames>
+      <ObjectId>24645</ObjectId>
+      <Predicate>max_salary &lt;= 5000</Predicate>
+      <StateNumber>884</StateNumber>
+    </check>
+    <column id="280" parent="271" name="id">
+      <DefaultExpression>nextval(&apos;job_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>884</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <SequenceId>24640</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="281" parent="271" name="title">
+      <Position>2</Position>
+      <StateNumber>884</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="282" parent="271" name="max_salary">
+      <Position>3</Position>
+      <StateNumber>884</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="283" parent="271" name="min_salary">
+      <Position>4</Position>
+      <StateNumber>884</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="284" parent="271" name="job_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24646</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>884</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="285" parent="271" name="job_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24647</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>884</StateNumber>
+      <UnderlyingIndexId>24646</UnderlyingIndexId>
+    </key>
+    <column id="286" parent="272" name="fname">
       <Position>1</Position>
       <StateNumber>837</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="270" parent="268" name="age">
+    <column id="287" parent="272" name="age">
       <Position>3</Position>
       <StateNumber>837</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="271" parent="268" name="id">
+    <column id="288" parent="272" name="id">
       <DefaultExpression>nextval(&apos;student_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
@@ -6578,7 +6698,7 @@ false posixrules
       <SequenceId>24619</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="272" parent="268" name="subject">
+    <column id="289" parent="272" name="subject">
       <Position>5</Position>
       <StateNumber>845</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
