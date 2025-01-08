@@ -42,8 +42,11 @@ alter table products add category_id int;
 select * from Products;
 select Product_name,category_name from categories left join products on Products.category_id = Categories.Category_Id ;
 select * from customers;
-select Customer_fname,category_name from customers left join orders on orders.Customer_Id= Customers.Customer_Id,
-                                         categories left join  public.orderdetails on order_id=Category_Id;
+
+select Customer_fname,product_name,c.category_name from products left join customers on public.customers.Customer_Id= products."productİd"
+                                                                 left join public.categories c on products.category_id = c.category_id
+
+
 ;
 
 ;select * from orderdetails;

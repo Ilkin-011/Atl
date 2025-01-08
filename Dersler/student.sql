@@ -16,3 +16,4 @@ select * from student where age<24;
 select * from student order by age desc ;
 select avg(age) from student ;
 select distinct student.fname from student
+
