@@ -2,10 +2,11 @@ package com.atl.product.controller;
 
 import com.atl.product.dto.ProductRequestDto;
 import com.atl.product.dto.ProductResponseDto;
+import com.atl.product.dto.UpdateProductDto;
+import com.atl.product.entity.ProductEntity;
 import com.atl.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -29,5 +30,16 @@ public class ProductController {
     @PostMapping("/update/{id}")
     public ProductRequestDto update(@RequestBody ProductRequestDto dto, @PathVariable Long id){
         return productService.updateProduct(dto,id);
+    }
+
+    @GetMapping("name")
+    public List<ProductResponseDto> findAllTable(@RequestParam String name) {
+        return productService.findAllTable(name);
+
+    }
+
+    @PutMapping("/update2/{id}")
+    public void updateProductPrice(@RequestBody UpdateProductDto dto,@PathVariable Long id){
+        productService.updatePPrice(dto,id);
     }
 }

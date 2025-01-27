@@ -1,9 +1,7 @@
-package com.atl.demo200;
+package com.atl.demo200.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.atl.demo200.Genre;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Builder
@@ -15,9 +13,8 @@ import lombok.*;
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private Long id;
     private String author;
     private String bookName;
-    private double price;
     private Genre genre;
 }

@@ -2,12 +2,15 @@ package com.atl.product.service;
 
 import com.atl.product.dto.ProductRequestDto;
 import com.atl.product.dto.ProductResponseDto;
+import com.atl.product.dto.UpdateProductDto;
 import com.atl.product.entity.ProductEntity;
 import com.atl.product.mapper.ProductMap;
 import com.atl.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,6 +61,16 @@ public class ProductService implements ProductServicelpml {
         return ProductRequestDto.builder()
                 .name(dto.getName())
                 .price(dto.getPrice()).build();
+    }
+
+    @Override
+    public List<ProductResponseDto> findAllTable(String name) {
+       return mapper.productDtoToEntity( repository.findAllTable(name));
+    }
+    @Transactional
+    @Override
+    public void updatePPrice(UpdateProductDto dto, Long id) {
+        repository.updatePrice(dto.getPrice(),id);
     }
 }
 

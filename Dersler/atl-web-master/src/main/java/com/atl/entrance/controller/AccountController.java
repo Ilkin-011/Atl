@@ -5,9 +5,9 @@ package com.atl.entrance.controller;
 import com.atl.entrance.dao.entity.AccountEntity;
 import com.atl.entrance.dao.repository.AccountRepository;
 import com.atl.entrance.dto.AccountRequestDto;
-import com.atl.entrance.service.AccountService;
+import com.atl.entrance.service.lml.AccountService;
 import java.util.List;
-import lombok.Getter;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
