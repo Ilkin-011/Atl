@@ -1,4 +1,4 @@
-package com.atl.bankapp.dao;
+package com.atl.bankapp.dao.entity;
 
 import jakarta.persistence.*;
 
